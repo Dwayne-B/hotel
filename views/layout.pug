@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header 
+      nav 
+        a(href='/')
+          img(src="/images/logo.png", alt="logo")
+        ul 
+          a(href="/sign-up")
+            li Sign Up 
+          a(href="/login") 
+            li Login 
+      .search-nav 
+        form(action="/" method="GET")
+          .input-wrapper
+            label(for="destination") Destination 
+            input(name="destination" id="destination" type="text" required)
+          .input-wrapper
+            label(for="duration") Duration (nights)
+            input(name="duration" id="duration" type="text" required)
+          .input-wrapper
+            label(for="departure-date") Departure Date 
+            input(name="dateOfDeparture" id="Departure-Date" type="date" required)
+          .input-wrapper
+            label(for="numberOfGuests") Number of guests 
+            input(name="numberOfGuests" id="number-of-Guests" type="number" required)
+          .input-wrapper
+            select(name="stars") 
+              option(value="1") Min 1 star
+              option(value="2") Min 2 star
+              option(value="3") Min 3 star
+              option(value="4") Min 4 star
+              option(value="5") Min 5 star
+          .input-wrapper
+            select(name="sort")
+              option(value="1") Price: Low - High
+              option(value="-1") Price: Hight - low  
+          .input-wrapper
+            button(type="submit") Search
+       
+      img(src="/images/beach.jpg")
+    block content
+  script(type='text/javascript').
+    let i = document.querySelector('[type="range"]');
+    val = document.querySelector('span');
+
+    val.innerHTML = i.value;
+
+    // use 'change' instead to see the difference in response
+    i.addEventListener('input', function () {
+      val.innerHTML = i.value;
+    }, false);
+  

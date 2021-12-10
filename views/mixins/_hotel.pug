@@ -1,0 +1,25 @@
+mixin hotel(hotel)
+
+  .hotel 
+      .hotel-img
+        a(href=`/images/${hotel.image}`)
+          img(src=`/images/hotels/${hotel.image}`) 
+      .hotel_info
+        a(href=`/all/${hotel._id}`)
+          h3 #{hotel.hotel_name}
+        hr
+        if url.startsWith('/all/')
+          p #{hotel.hotel_desc}
+          hr
+        p star rating: #{hotel.star_rating}
+        p country: #{hotel.country} 
+        p cost per night: $ #{hotel.cost_per_night}
+
+
+        echo "# hotel" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Dwayne-B/hotel.git
+git push -u origin main

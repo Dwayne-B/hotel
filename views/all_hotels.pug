@@ -1,0 +1,6 @@
+extends layout
+include mixins/_hotel
+block content
+    h2= title
+    each hotel in allHotels 
+        +hotel(hotel)
